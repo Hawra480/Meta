@@ -35,49 +35,18 @@ library("ggnewscale")
 
 
 
-setwd("/Users/hawraal-ghafli/Desktop/Meta/Meta_models")
+setwd("/Users/hawraal-ghafli/Desktop/Meta/Phylogentic tree")
 
 #a study with samples collected from more than one country are inserted in one row 
 
 #host<-read.csv("Host_table.csv", na.strings=c("", NA))
 
  
-#-------------------------#
-
-#preparing the uniqe names of the host/parasite species. 
-p<-c("Trypanosoma_brucei", "Trypanosoma_congolense", "Trypanosoma_vivax", "Leishmania_donovani", "Leishmania_tropica",
-     "Trypanosoma_everetti", "Trypanosoma_lewisi", "Trypanosoma_cruzi",
-     "Leishmania_infantum", "Leishmania_major", "Trypanosoma_evansi", "Crithidia_bombi", "Lotmaria_passim", 
-     "Leishmania_braziliensis", "Leishmania_guyanensis", "Leishmania_amazonensis", "Trypanosoma_evotomys", "Trypanosoma_equiperdum",
-     "Trypanosoma_rangeli", "Trypanosoma_congolense_savannah", "Trypanosoma_godfreyi", 
-     "Trypanosoma_simiae_Tsavo", "Trypanosoma_theileri", "Trypanosoma_avium", "Trypanosoma_brucei_gambiense", "Trypanosoma_brucei_brucei",
-     "Trypanosoma_simiae", "Crithidia_mellificae", "Trypanosoma_brucei_rhodesiense",
-     "Leishmania_mexicana", "Trypanosoma_dionisii", "Agomonas_deanei", "Angomonas_ambiguus", "Angomonas_desouzai",
-     "Trypanosoma_culicavium", "Trypanosoma_copemani", "Trypanosoma_gilletti", "Trypanosoma_noyesi", "Trypanosoma_vegrandis",
-     "Crithidia_mellificae", "Lotmaria_passim", "Trypanosoma_brucei_gambiense", "Trypanosoma_tungarae", "Leptomonas_pyrrhocoris", 
-     "Leptomonas_seymouri", "Crithidia_expoeki","Lotmaria_passim", "Leishmania_turanica", "Trypanosoma_chelodinae", "Trypanosoma_giganteum", "Trypanosoma_brucei", "Trypanosoma_vegrandis")
-
-p1<-unique(p)
-#h1<- as.character(h1)
-p1<-as.character(p1)
-#making a tree for parasite (p1) and for host (h1)
-taxon_searchp <- tnrs_match_names(names = p1, context_name = "All life")
-#taxon_searchh <- tnrs_match_names(names = h1, context_name = "Animals")
-#knitr::kable(taxon_searchh)
-knitr::kable(taxon_searchp)
-
-dev.new(width=200, height=400)
-
-ott_in_tree2 <- ott_id(taxon_searchp)[is_in_tree(ott_id(taxon_searchp))]
-tr2 <- tol_induced_subtree(ott_ids = ott_in_tree2)
-plot(tr2, cex=.6)
-
-tree2_grafen <- compute.brlen(tr2, method="Grafen", power=1)
-plot(tree2_grafen, cex=.2)
+#-
 #making a matrix of the host, or parasite 
 h<- c("Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Bos_frontalis", "Turdus_migratorius", "Capra_hircus", "Bos_frontalis", "Ovis_aries", "Bos_frontalis", "Capra_hircus", "Ovis_aries", "Bos_frontalis", 
-      "Capra_hircus", "Ovis_aries", "Crocidura_hirta", "Gerbilliscus_vicinus", "Rattus_rattus", "Mastomys_natalensis", "Graphiurus_murinus", "Thryonomys_swinderianus", 
+      "Capra_hircus", "Ovis_aries", "Gerbilliscus_vicinus", "Rattus_rattus", "Mastomys_natalensis", "Graphiurus_murinus", "Thryonomys_swinderianus", 
       "Macaca_nemestrina", "Bichromomyia_flaviscutellata", 
       "Canis_lupus_familiaris", "Catorhintha_guttula", "Catorhintha_guttula", "Catorhintha_guttula", "Catorhintha_guttula", "Chrysomya_albiceps", "Equus_asinus", "Camelus_dromedarius",
       "Felis_catus", "Felis_catus", "Bubalus_bubalis", "Bos_frontalis", 
@@ -109,7 +78,7 @@ h<- c("Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Equus_caballus", "Panstrongylus_diasi", "Panstrongylus_megistus", "Triatoma_sordida", "Ovis_aries", "Ovis_aries", "Capra_hircus", "Capra_hircus", "Sus_scrofa", "Sus_scrofa",
       "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Bubalus_bubalis", "Merluccius_merluccius", "Canis_lupus_familiaris", "Bombus_bimaculatus", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Glossina_pallidipes", "Bos_frontalis", "Equus_caballus", "Canis_lupus_familiaris", "Bos_frontalis", "Bos_frontalis", "Glossina_pallidipes", "Glossina_pallidipes", "Bombus_bimaculatus", "Bombus_bimaculatus",
-      "Bombus_bimaculatus", "Bombus_bimaculatus", "Bombus_terrestris", "Bombus_terrestris", "Bomus_californicus", "Bomus_californicus", "Bos_frontalis", "Bos_frontalis", "Glossina_pallidipes",
+      "Bombus_bimaculatus", "Bombus_bimaculatus", "Bombus_terrestris", "Bombus_terrestris", "Bombus_californicus", "Bombus_californicus", "Bos_frontalis", "Bos_frontalis", "Glossina_pallidipes",
       "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Meriones_libycus", "Psammomys_obesus", "Bomus_californicus", "Bombus_citrinus", "Bombus_diligens", "Bombus_diligens", "Bombus_ephippiatus", "Bombus_ephippiatus", "Bombus_ephippiatus",
       "Bombus_fervidus", "Bombus_fervidus", "Bombus_fervidus", "Bombus_fervidus", "Bombus_fervidus", "Bombus_flavifrons", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Lochmias_nematura", "Automolus_leucophthalmus",
       "Syndactyla_rufosuperciliata", "Conopophaga_lineata", "Chamaeza_campanisona", "Myrmeciza_loricata", "Pyriglena_leucoptera", "Thamnophilus_caerulescens", "Equus_caballus", "Canis_lupus_familiaris",
@@ -119,7 +88,7 @@ h<- c("Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Equus_caballus", "Equus_asinus", "Canis_lupus_familiaris", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Felis_catus", "Glossina_pallidipes", "Rattus_norvegicus", "Rattus_exulans",
       "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_pallidipes", "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis",
       "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis", "Glossina_palpalis_palpalis", "Glossina_tachinoides", "Glossina_tachinoides", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Artibeus_lituratus", "Pteronotus_personatus",
-      "Esox_lucius", "Mastomys_erythroleucus", "Canis_lupus_familiaris", "Bubalus_bubalis", "Glossina_tachinoides", "Camelus_dromedarius", "Camelus_dromedarius", "Glossina_tachinoides", "Glossina_tachinoides", "Glossina_tachinoides", "Glossina_tachinoides", "Rhodnius_ecuadoriensis",
+      "Esox_lucius", "Mastomys_erythroleucus",  "Crocidura_hirta", "Canis_lupus_familiaris", "Bubalus_bubalis", "Glossina_tachinoides", "Camelus_dromedarius", "Camelus_dromedarius", "Glossina_tachinoides", "Glossina_tachinoides", "Glossina_tachinoides", "Glossina_tachinoides", "Rhodnius_ecuadoriensis",
       "Rhodnius_ecuadoriensis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Vulpes_vulpes", "Canis_lupus_familiaris", "Bos_frontalis", "Bos_frontalis", "Canis_lupus_familiaris", "Felis_catus", "Bombus_griseocollis", "Glossina_tachinoides", 
       "Bos_frontalis", "Glossina_tachinoides", "Bos_frontalis", "Chrysomya_albiceps", "Chrysomya_putoria", "Chrysomya_megacephala", "Lucilia_eximia", "Bos_frontalis", "Trichophoromyia_ubiquitalis", "Trichophoromyia_ubiquitalis", "Sus_scrofa", "Psathyromyia_aragaoi",
       "Lutzomyia_auraensis", "Lutzomyia_auraensis", "Lutzomyia_auraensis", "Sus_scrofa", "Sus_scrofa", "Lutzomyia_ayacuchensis", "Sus_scrofa", "Nycticeius_humeralis", "Nycticeius_humeralis",
@@ -129,7 +98,7 @@ h<- c("Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Migonemyia_migonei", "Lutzomyia_nevesi", "Lutzomyia_punctigeniculata", "Evandromyia_sallesi", "Lutzomyia_shawi", "Lutzomyia_shawi", "Lutzomyia_sherlocki", "Lutzomyia_spathotrichia", "Lutzomyia_tejadai", "Nyssomyia_umbratilis", "Lutzomyia_walkeri", "Bubalus_bubalis", "Bos_frontalis",
       "Bubalus_bubalis", "Bos_frontalis", "Bos_frontalis", "Bombus_griseocollis", "Bombus_griseocollis", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Nyssomyia_whitmani", "Nyssomyia_whitmani", "Nyssomyia_whitmani", "Lutzomyia_yucumensis", "Neomegalotomus_parvus", "Neomegalotomus_parvus",
       "Neomegalotomus_parvus", "Canis_lupus_familiaris", "Felis_catus", "Felis_catus", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Canis_lupus_familiaris", "Neomegalotomus_parvus", "Bettongia_penicillata", "Bettongia_penicillata", "Bettongia_penicillata",
-      "Bettongia_penicillata", "Canis_lupus_familiaris", "Bos_frontalis", "Camelus_dromedarius", "Equus_caballus", "Equus_asinus", "Equus_asinus", "Bombus_hortorum", "Bombus_huntii", "Neomegalotomus_parvus", "Niesthrea_vincentii", "Niesthrea_vincentii", "Phlebotomus_kandelakii", "Phlebotomus_argentipes",
+      "Bettongia_penicillata",  "Canis_lupus_familiaris", "Bos_frontalis", "Camelus_dromedarius", "Equus_caballus", "Equus_asinus", "Equus_asinus", "Bombus_hortorum", "Bombus_huntii", "Neomegalotomus_parvus", "Niesthrea_vincentii", "Niesthrea_vincentii", "Phlebotomus_kandelakii", "Phlebotomus_argentipes",
       "Capra_hircus", "Capra_hircus", "Capra_hircus", "Bos_frontalis", "Camelus_dromedarius", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "", "", "Canis_lupus_familiaris", "", "", "", "Canis_lupus_familiaris", "", "Bos_frontalis", "Bos_frontalis", "Phlebotomus_argentipes", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Felis_catus",
       "Canis_lupus_familiaris", "Canis_lupus_familiaris", "", "Bos_frontalis", "Atelerix algirus ", "Phlebotomus_argentipes", "Sus_scrofa", "Didelphis albiventris", "Conepatus chinga", "Felis_catus", "Engystomops pustulosus", "Canis_lupus_familiaris", "Canis_lupus_familiaris", "Capra_hircus", "Capra_hircus",
       "Sus_scrofa", "Ovis_aries", "Ovis_aries", "Canis_lupus_familiaris", "Bombus_huntii", "Bombus_huntii", "Bombus_huntii", "Phlebotomus_brevis", "Meriones_libycus", "Nasua_narica", "Procyon_lotor", "Phlebotomus_caucasicus", "Phlebotomus_chinensis",
@@ -144,17 +113,17 @@ h<- c("Bos_frontalis", "Bos_frontalis", "Bos_frontalis", "Bos_frontalis",
       "Ovis_aries", "Camelus_dromedarius", "Equus_asinus", "Capra_hircus", "Ovis_aries", "Ovis_aries", "Bombus_vagans", "Bombus_vosnesenskii", "Bombus_vosnesenskii", "Bombus_vosnesenskii", "Bombus_weisi", "Bombus_weisi",
       "Bombus_wilmattae", "Bombus_wurflenii", "Rhodnius_prolixus", "Canis_lupus_familiaris", "Artibeus_lituratus", "Anoura_caudifer", "Glossophaga_soricina", "Carollia_perspicillata", "Triatoma_longipennis")
 info <- read.csv("tree_ring1.csv")
-h<- c("Alethe_castanea", "Alethe_diademata", "Alethe_poliocephala", "Anoura_caudifer", "Anoura_geoffroyi",
+h<- c("Engystomops_pustulosus","Alethe_castanea", "Alethe_diademata", "Alethe_poliocephala", "Anoura_caudifer", "Anoura_geoffroyi",
       "Antrozous_pallidus", "Apis_mellifera", "Artibeus_lituratus", "Arvicanthis_niloticus", "Automolus_leucophthalmus", "Baiomys_taylori", "Bettongia_penicillata", "Bichromomyia_flaviscutellata",
       "Bleda_canicapillus", "Bleda_eximius", "Bleda_syndactylus", "Bombus_asiaticus", "Bombus_auricomus", "Bombus_bifarius", "Bombus_bimaculatus", "Bombus_citrinus", "Bombus_diligens", "Bombus_ephippiatus",
       "Bombus_fervidus", "Bombus_flavifrons", "Bombus_frigidus", "Bombus_griseocollis", "Bombus_hortorum", "Bombus_huntii", "Bombus_impatiens", "Bombus_lapidarius", "Bombus_lucorum", "Bombus_macgregori",
       "Bombus_melanopygus", "Bombus_mesomelas", "Bombus_mixtus", "Bombus_monticola", "Bombus_pascuorum", "Bombus_pensylvanicus", "Bombus_perplexus", "Bombus_pratorum", "Bombus_pyrenaeus", "Bombus_ruderarius",
       "Bombus_rufocinctus", "Bombus_sandersoni", "Bombus_sichelii", "Bombus_simillimus", "Bombus_sylvicola", "Bombus_ternarius", "Bombus_terrestris", "Bombus_terricola", "Bombus_trinominatus",
-      "Bombus_vagans", "Bombus_vosnesenskii", "Bombus_weisi", "Bombus_wilmattae", "Bombus_wurflenii", "Bomus_californicus", "Bos_frontalis", "Bubalus_bubalis",
+      "Bombus_vagans", "Bombus_vosnesenskii", "Bombus_weisi", "Bombus_wilmattae", "Bombus_wurflenii", "BomBus_californicus", "Bos_frontalis", "Bubalus_bubalis",
       "Callithrix_jacchus", "Camelus_dromedarius", "Campethera_caroli", "Canis_lupus_familiaris", "Capra_hircus", "Carollia_perspicillata", "Catorhintha_guttula",
       "Chaetopsylla_globiceps", "Chamaeza_campanisona", "Chrysomya_albiceps", "Chrysomya_megacephala", "Chrysomya_putoria", "Cochliomyia_macellaria", "Conopophaga_lineata",
       "Cricetomys_gambianus", "Crocidura_hirta", "Ctenocephalides_canis", "Ctenocephalides_felis_felis", "Ctenophthalmus_agyrtes", "Culex_pipiens", "Culex_torrentium",
-      "Drosophila_obscura", "Engystomopspustulosus", "Equus_asinus", "Equus_caballus", "Esox_lucius", "Eurillas_latirostris", "Eurillas_virens", "Evandromyia_sallesi",
+      "Drosophila_obscura", "Equus_asinus", "Equus_caballus", "Esox_lucius", "Eurillas_latirostris", "Eurillas_virens", "Evandromyia_sallesi",
       "Felis_catus", "Gerbilliscus_vicinus", "Glossina_brevipalpis", "Glossina_morsitans_morsitans", "Glossina_morsitans_submorsitans", "Glossina_pallidipes", "Glossina_palpalis_palpalis",
       "Glossina_swynnertoni", "Glossina_tachinoides", "Glossophaga_soricina", "Graphiurus_murinus", "Hylia_prasina", "Hylocichla_mustelina", "Icterus_spurius", "Illadopsis_rufipennis", "Leptocorisa_lepida",
       "Lepus_europaeus", "Lochmias_nematura", "Lucilia_eximia", "Lucilia_sericata", "Lutzomyia_auraensis", "Lutzomyia_ayacuchensis", "Lutzomyia_cortelezzii", "Lutzomyia_longipalpis", "Lutzomyia_nevesi",
@@ -192,8 +161,12 @@ dev.new(width=500, height=500)
 
 groupInfo <- split(tr3$tip.label, gsub("_\\w+", "", tr3$tip.label))
 tr3 <- groupOTU(info$Host, groupInfo)
-ggtree(tr3, layout='circular') + geom_tiplab(size=2.1, aes(angle=angle))+ xlim(-31, 31)
+tip <- c("Lutzomyia_chiapanensis_ott4457052", "Omus_californicus_ott370841")
+
+plot(drop.tip(tr3, tip), trim.internal = FALSE))
+ggtree(drop.tip(tr3, tip), layout='circular') + geom_tiplab(size=2.1, aes(angle=angle))+ xlim(-31, 31)
 ggtree(tr3, layout='circular') + geom_highlight()
+
 
 hh1<- as.data.frame(host)
 host$Order<-as.factor(host$Order)
@@ -207,7 +180,7 @@ poslist <- c(1.6, 1.4, 1.6, 0.8, 0.1, 0.25, 1.6, 1.6, 1.2, 0.4,
              0.3, 0.4, 0.3)
 labdf <- data.frame(node=nodeids, label=nodelab, pos=poslist)
 
-p<-  ggtree(tr3, layout="circular", open.angle=10) + 
+p<-  ggtree(drop.tip(tr3, tip), layout="circular", open.angle=10) + 
   geom_tippoint(info, mapping=aes(y= Host, fill=all_type), 
                 size=1.5,
                 show.legend=FALSE)
@@ -226,8 +199,8 @@ unwanted=c("mixed", "mixed ", "")
 
 head(info)
 info<- as.data.frame(info)
-p <- ggtree(x, layout="circular", open.angle=5) 
-p <- ggtree(x, layout="fan", open.angle=10, size=0.5)
+p <- ggtree(drop.tip(x, tip), layout="circular", open.angle=5) 
+p <- ggtree(drop.tip(x, tip), layout="fan", open.angle=10, size=0.5)
 #p<-  ggtree(x, layout="fan", open.angle=5, size=0.5) %<+% info + xlim(-.1, 4)
 p
 
@@ -273,7 +246,7 @@ dev.new(width=1500, height=1500)
 p2.1<- p1 +  new_scale_color() +
   geom_fruit(data=info, geom=geom_tile,
              mapping=aes(y=Host,  alpha=abundance, fill=all_type),
-             color = "grey50", offset = 0.04,size = 0.02)+
+             color = "grey50", offset = 0.04,size = 0.05)+
   scale_alpha_continuous(range=c(0.1, 10),
                          guide=guide_legend(keywidth = 0.3, keyheight = 0.3, order=3)) +
   geom_fruit(data=info, geom=geom_bar,
@@ -284,7 +257,7 @@ p2.1<- p1 +  new_scale_color() +
   ) +
   scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.3, keyheight = 0.3, order=3))+
-  geom_treescale(fontsize=2, linesize=0.3, x=4.9, y=0.1) +
+  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
   theme(legend.position=c(0.93, 0.8),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=6.5),
@@ -302,13 +275,15 @@ p2.2<- p2.1 +  new_scale_fill() +
   ) +
   scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=4))+
-  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
+  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
         legend.text=element_text(size=5),
         legend.spacing.y = unit(0.03, "cm"),
   )
+
+
 dev.new(width=1500, height=1500)
 
 
@@ -327,7 +302,7 @@ p3<- p2.1 +  new_scale_fill() +
   ) + scale_fill_manual(values=c("#C6DBEF", "#9ECAE1", "#6BAED6", "#4292C6", "#2171B5", "#bc74c4", "#74C476", 
                                  "#b0057a", "0570B0", "#520e3c", "#2166AC","#B2182B", "#D6604D", "#F4A582", "#FDDBC7" , "#C7E9C0", "#A1D99B", "#74C476", "#41AB5D", "#238B45", "#006D2C", "#00441B"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=22))+
-  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
+  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
@@ -350,7 +325,7 @@ p3.1<- p3 +  new_scale_fill() +
              grid.params=list() # add the grid line of the external bar plot.
   ) +scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=4))+
-  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
+  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
@@ -375,3 +350,9 @@ p1 <- p + geom_star(data=info,
                         guide = guide_legend(keywidth = 0.5, keyheight = 0.5, order=3,
                                              override.aes=list(starshape=15)))
 p3.1
+tiff(filename =  "tree.tiff",
+     res = 300,width = 5.5, height = 5.2, units = 'in',
+     compression = c( "lzw") )
+p3.1
+dev.off()
+
