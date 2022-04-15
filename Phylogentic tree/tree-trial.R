@@ -246,7 +246,7 @@ dev.new(width=1500, height=1500)
 p2.1<- p1 +  new_scale_color() +
   geom_fruit(data=info, geom=geom_tile,
              mapping=aes(y=Host,  alpha=abundance, fill=all_type),
-             color = "grey50", offset = 0.04,size = 0.05)+
+             color = "grey50", offset = 0.04,size = 0.02)+
   scale_alpha_continuous(range=c(0.1, 10),
                          guide=guide_legend(keywidth = 0.3, keyheight = 0.3, order=3)) +
   geom_fruit(data=info, geom=geom_bar,
@@ -257,7 +257,7 @@ p2.1<- p1 +  new_scale_color() +
   ) +
   scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.3, keyheight = 0.3, order=3))+
-  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
+  geom_treescale(fontsize=2, linesize=0.3, x=4.9, y=0.1) +
   theme(legend.position=c(0.93, 0.8),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=6.5),
@@ -275,7 +275,7 @@ p2.2<- p2.1 +  new_scale_fill() +
   ) +
   scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=4))+
-  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
+  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
@@ -302,7 +302,7 @@ p3<- p2.1 +  new_scale_fill() +
   ) + scale_fill_manual(values=c("#C6DBEF", "#9ECAE1", "#6BAED6", "#4292C6", "#2171B5", "#bc74c4", "#74C476", 
                                  "#b0057a", "0570B0", "#520e3c", "#2166AC","#B2182B", "#D6604D", "#F4A582", "#FDDBC7" , "#C7E9C0", "#A1D99B", "#74C476", "#41AB5D", "#238B45", "#006D2C", "#00441B"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=22))+
-  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
+  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
@@ -325,7 +325,7 @@ p3.1<- p3 +  new_scale_fill() +
              grid.params=list() # add the grid line of the external bar plot.
   ) +scale_fill_manual(values=c("#0000FF","#FFA500","#FF0000"),
                     guide=guide_legend(keywidth = 0.7, keyheight = 0.7, order=4))+
-  geom_treescale(fontsize=1, linesize=0, x=4.9, y=0.1) +
+  geom_treescale(fontsize=4, linesize=0.3, x=4.9, y=0.1) +
   theme(legend.position=c(0.99, 0.5),
         legend.background=element_rect(fill=NA),
         legend.title=element_text(size=7),
