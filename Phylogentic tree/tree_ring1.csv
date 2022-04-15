@@ -1,5 +1,5 @@
 ﻿Host,Host_only,ott_id,prev,abundance,host_group,all_type
-Engystomops pustulosus,Engystomops,pustulosus,27.5,1,Anura,monoxenous_spp.
+Engystomops_pustulosus_ott262675,Engystomops_pustulosus,ott262675,27.5,1,Anura,monoxenous_spp.
 Bos_frontalis_ott96935,Bos_frontalis,ott96935,8.588469662,85,Artiodactyla,dixenous_spp.
 Bubalus_bubalis_ott641187,Bubalus_bubalis,ott641187,16.57142857,7,Artiodactyla,dixenous_spp.
 Camelus_dromedarius_ott510752,Camelus_dromedarius,ott510752,20.08006382,13,Artiodactyla,dixenous_spp.
@@ -7,6 +7,7 @@ Capra_hircus_(species_in_domain_Eukaryota)_ott19017,Capra_hircus_(species_in_dom
 Ovis_aries_ott70819,Ovis_aries,ott70819,11.52354557,15,Artiodactyla,dixenous_spp.
 Sus_scrofa_ott730013,Sus_scrofa,ott730013,9.780030657,17,Artiodactyla,dixenous_spp.
 Canis_lupus_familiaris_ott247333,Canis_lupus_familiaris,ott247333,16.80280508,66,Carnivora,dixenous_spp.
+Felis_silvestris_ott563163,Felis_silvestris,ott563163,13,2,Carnivora,dixenous_spp.
 Felis_catus_ott563166,Felis_catus,ott563166,17.27363636,11,Carnivora,dixenous_spp.
 Nasua_narica_ott736280,Nasua_narica,ott736280,9,1,Carnivora,dixenous_spp.
 Nasua_nasua_ott348031,Nasua_nasua,ott348031,1.7,1,Carnivora,dixenous_spp.
@@ -29,7 +30,7 @@ Chrysomya_albiceps_ott855084,Chrysomya_albiceps,ott855084,2.5,2,Diptera,monoxeno
 Chrysomya_megacephala_ott358231,Chrysomya_megacephala,ott358231,0.65,2,Diptera,monoxenous_spp.
 Chrysomya_putoria_ott246856,Chrysomya_putoria,ott246856,0.65,2,Diptera,monoxenous_spp.
 Cochliomyia_macellaria_ott578164,Cochliomyia_macellaria,ott578164,1,1,Diptera,dixenous_spp.
-Ctenophthalmus_agyrtes_ott853390,Ctenophthalmus_agyrtes,ott853390,15.43,1,Diptera,dixenous_spp.
+Ctenophthalmus_agyrtes_ott853390,Ctenophthalmus_agyrtes,ott853390,15.43,1,Siphonaptera,dixenous_spp.
 Culex_pipiens_ott218684,Culex_pipiens,ott218684,2.465,4,Diptera,monoxenous_spp.
 Culex_torrentium_ott628301,Culex_torrentium,ott628301,3.57,1,Diptera,dixenous_spp.
 Drosophila_obscura_ott355241,Drosophila_obscura,ott355241,3.4,5,Diptera,both
@@ -139,7 +140,7 @@ Bombus_vosnesenskii_ott35518,Bombus_vosnesenskii,ott35518,29.82333333,3,Hymenopt
 Bombus_weisi_ott483319,Bombus_weisi,ott483319,2.5,2,Hymenopterans,monoxenous_spp.
 Bombus_wilmattae_ott282595,Bombus_wilmattae,ott282595,31.8,1,Hymenopterans,monoxenous_spp.
 Bombus_wurflenii_ott962507,Bombus_wurflenii,ott962507,11,1,Hymenopterans,monoxenous_spp.
-Bomus_californicus_ott370841,Bomus_californicus,ott370841,53,3,Hymenopterans,monoxenous_spp.
+Ombus_californicus_ott370841,Bombus_californicus,ott370841,53,3,Hymenopterans,monoxenous_spp.
 Lepus_europaeus_ott864607,Lepus_europaeus,ott864607,1.7,1,Lagomorpha,dixenous_spp.
 Alethe_castanea_ott812519,Alethe_castanea,ott812519,4.5,1,Passeriformes,dixenous_spp.
 Alethe_diademata_ott1029622,Alethe_diademata,ott1029622,25,1,Passeriformes,dixenous_spp.
@@ -186,7 +187,7 @@ Mastomys_erythroleucus_ott185326,Mastomys_erythroleucus,ott185326,11.4,2,Rodenti
 Mastomys_natalensis_ott271584,Mastomys_natalensis,ott271584,22.7,1,Rodentia,dixenous_spp.
 Meriones_libycus_ott404790,Meriones_libycus,ott404790,23.99666667,3,Rodentia,dixenous_spp.
 Myodes_glareolus_ott1051603,Myodes_glareolus,ott1051603,15,1,Rodentia,dixenous_spp.
-Myrmeciza_loricata_ott656616,Myrmeciza_loricata,ott656616,23.3,1,Rodentia,dixenous_spp.
+Myrmeciza_loricata_ott656616,Myrmeciza_loricata,ott656616,23.3,1,Passeriformes,dixenous_spp.
 Psammomys_obesus_ott674914,Psammomys_obesus,ott674914,8.29,1,Rodentia,dixenous_spp.
 Rattus_exulans_ott283187,Rattus_exulans,ott283187,25,1,Rodentia,dixenous_spp.
 Rattus_norvegicus_ott271555,Rattus_norvegicus,ott271555,19.8,2,Rodentia,dixenous_spp.
@@ -196,6 +197,6 @@ Thryonomys_swinderianus_ott692678,Thryonomys_swinderianus,ott692678,10,1,Rodenti
 Ctenocephalides_canis_ott32453,Ctenocephalides_canis,ott32453,15.43,1,Siphonaptera,dixenous_spp.
 Ctenocephalides_felis_felis_ott372741,Ctenocephalides_felis_felis,ott372741,4,1,Siphonaptera,monoxenous_spp.
 Crocidura_hirta_ott507580,Crocidura_hirta,ott507580,22.7,1,Soricomorpha,dixenous_spp.
-Chaetopsylla_globiceps_ott3322258,Chaetopsylla_globiceps,ott3322258,15.43,2,Strepsiptera,dixenous_spp.
-Nosopsyllus_fasciatus_ott316716,Nosopsyllus_fasciatus,ott316716,15.43,1,Strepsiptera,dixenous_spp.
-Nycteridopsylla_eusarca_ott3322763,Nycteridopsylla_eusarca,ott3322763,15.43,1,Strepsiptera,dixenous_spp.
+Chaetopsylla_globiceps_ott3322258,Chaetopsylla_globiceps,ott3322258,15.43,2,Siphonaptera,dixenous_spp.
+Nosopsyllus_fasciatus_ott316716,Nosopsyllus_fasciatus,ott316716,15.43,1,Siphonaptera,dixenous_spp.
+Nycteridopsylla_eusarca_ott3322763,Nycteridopsylla_eusarca,ott3322763,15.43,1,Siphonaptera,dixenous_spp.
