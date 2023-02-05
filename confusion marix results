@@ -1,0 +1,13 @@
+# confusion marix results of MLA preformance to aid in the intinal screening phase
+mainly to be able to identify potentially missed studies by human reviewr upon training
+
+FN	382
+TP	46
+TN	3642
+FP	23
+
+Accuracy 90.1%
+Misclassification 9.9%
+Precision 66.7%
+Sensitivity 10.7%
+Specificity 99.3%
