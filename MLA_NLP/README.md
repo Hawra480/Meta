@@ -9,3 +9,7 @@ In this directory there are the following: 
 2- Algorithm comparison graph(png)
 3-input file named ML_screening1.csv
 4-Training and prediction code
+
+
+5-Confusion matrix code and figure were uploaded. 
+6-Extended notes on current protocl and future recomendation for futur protocols are added. 
