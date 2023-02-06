@@ -1,0 +1,36 @@
+# current protocol 
+1 – input data comprise the following: title, abstract, and decision for the papers screened. 5116 papers in total, 939 have final include decision = 1 after full-text screening , and 4177 have decision = 0. 
+
+2 – Abstract and title are merged into one string variable (TA). The dataset which enters the modeling pipeline comprise two fields: TA and manual Decision by human reviewer. 
+
+3 - Modeling dataset is split into training (20%) and testing (80%) – the splitting is done using default settings of the underlying functions (shuffled but not stratified due to the large dataset and it was hard to manually classify each report as per host and parasite taxa). 
+
+4 – TF-IDF transformation is performed. It is first fit to the training set, and results are applied to the test set. 
+5- Subsequently, the training and testing sets are transformed to features/decision. Features are words that appear in the totality of the training set, and their value are their importance for each input string. 
+
+5-By fitting to the training set first, then applying to the test set, the transformers learn the vocabulary/features from the training set, and only those are used when transforming the test-set. 
+6- The vectorizer (TfidfVectorizer) and transforming functions are run using default parameters. Stop words are not included. 
+
+4 – Multiple algorithms are initially run (model_testing_and_selection.py). Those are; Logistic Regression, KNN (K Nearest Neighbour), Linear Discriminant Analysis, Naïve Bayes, CART, and SVM. These are standard and cover wide range of techniques. 
+
+5 – Algorithms are trained using 10-fold cross validation to optimise accuracy. No stratification was done and no seeding to enable the mean accuracy to be measured using kfold 
+
+6 –  Mean accuracies are listed in the file as follows: KNN = 0.82, LR = 0.80. CART = 0.78, SVM = 0.82, NB and LDA = nan. needs discussion. 
+
+7 – file prediction code.py has their “selected model” run. A Logistic Regression model was selected to be trained considering it has the highest accuracy in "include" decision with lower error bars and variability. 
+
+8- Class imbalance might have affected the accuracy (models/reviewer agreed on the zeros (i.e. exclude decision) but not the ones (i.e. include decision)).
+
+9- Thus, all “include” decisions were subjected to full-text review to assess eligibility which is the most stringent way to resolve disagreement on “include” decisions.
+
+10- the utilisation of MLA&NLP is particularly useful to identify potential missed studies by human reviewer during the intimal screening phase. 
+
+11-Confusion matrix results and figure are shared in this github file for the automated prediction preformance in 80% of the dataset compared to the final include decision following full-text review. 
+
+#Future recommendation to improve automated screening 
+1-MLA can be trained better by stratifying reports as per host and parasite taxa in thte future, a script that can automate the extraxtion of host , parasie taxa would be great. 
+2-MLA can act as more powerful “second reviewer” if trained by two or more reviewers to be able to increase sensitivity. 
+3-Automated decision can be obtained from the full dataset by running multiple random 20% training for 10 times or more, each run will generate a prediction of a different 80% test-set
+4-If step 3 is taken, comparing the prediction outcoms in each run will give a confidence score to the prediction per report (e.g. 6/10 predicted as 1 highlights higher confidence in the automated decision and vice versa).  
+
+
