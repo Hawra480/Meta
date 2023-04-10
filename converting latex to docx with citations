@@ -1,8 +1,0 @@
-#export the source file from overleave
-#open trminal 
-#go to cd file 
-#add csl journal citation (downloaded from zetro)
-#now in terminal run the following : 
-pandoc main.tex --citeproc  --bibliography=M.bib --csl nature.csl -o main.docx  
-pandoc main2.tex --citeproc  --bibliography=M.bib --csl nature.csl -o main2.docx  
-#double check figures titles are there and colour of text and name of figure in texts (may need adjusting)
